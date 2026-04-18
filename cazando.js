@@ -1,19 +1,34 @@
 let canvas=document.getElementById("areaJuego");
 let ctx=canvas.getContext("2d");
 
+let gatoX = 0;
+let gatoY = 0;
+let comidaX = 0;
+let comidaY= 0;
+
+const ALTO_GATO= 40;
+const ANCHO_GATO = 60;
+const ALTO_COMIDA= 20;
+const ANCHO_COMIDA= 20;
+
+function graficarGato() {
+    gatoX = canvas.height/2;
+    gatoY = canvas.width/2;
+    ctx.fillStyle="blue";
+    ctx.fillRect(gatoX,gatoY,ANCHO_GATO,ALTO_GATO);
+
+}
+
+function graficarComida() {
+    comidaX= canvas.height-20;
+    comidaY= canvas.width-20;
+    ctx.fillStyle="blue";
+    ctx.fillRect(comidaX,comidaY,ANCHO_COMIDA,ALTO_COMIDA);
+
+}
 function iniciarJuego(){
     graficarGato();
     graficarComida();
 
 }
-function graficarGato() {
-    ctx.fillStyle="blue";
-    ctx.fillRect(canvas.width/4,canvas.height/3,canvas.width*20/40,canvas.height*4/20);
 
-}
-
-function graficarComida() {
-    ctx.fillStyle="blue";
-    ctx.fillRect(0,0,100,50);
-
-}
